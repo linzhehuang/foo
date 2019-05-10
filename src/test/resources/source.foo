@@ -1,0 +1,9 @@
+function sum(min, max) {
+  var sum = 10;
+  for (var i = min; i <= max; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+ret = sum(0, 10);
