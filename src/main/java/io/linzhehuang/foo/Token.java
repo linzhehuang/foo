@@ -1,26 +1,39 @@
 package io.linzhehuang.foo;
 
 public class Token {
-	public static final String TOKEN_EOF = "eof",
+	public static final String TOKEN_EOF = "<eof>",
 			                   TOKEN_ID = "<id>",
 			                   TOKEN_NUMBER = "<number>",
+			                   TOKEN_STRING = "<string>",
 			                   TOKEN_ADD = "+",
 			                   TOKEN_SEMICOLON = ";",
 			                   TOKEN_ASSIGN = "=",
 			                   TOKEN_IF = "if";
 	
-	public String category;
-	public Object value = null;
-	
+	private String name = TOKEN_EOF;
+	private Object value = null;
+
 	public Token() {
-		this.category = TOKEN_EOF;
+		
 	}
 	
-	public Token(String category) {
-		this.category = category;
+	public Token(String name) {
+		this.name = name;
 	}
 	
-	public Token(char symbol) {
-		this.category = Character.toString(symbol);
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Object getValue() {
+		return value;
+	}
+
+	public void setValue(Object value) {
+		this.value = value;
 	}
 }
